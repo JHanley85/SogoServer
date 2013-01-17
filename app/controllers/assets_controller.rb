@@ -1,4 +1,5 @@
 class AssetsController < ApplicationController
+  layout 'gallery', :only=>[:index]
   # GET /assets
   # GET /assets.xml
   def index
@@ -42,7 +43,7 @@ class AssetsController < ApplicationController
   # POST /assets
   # POST /assets.xml
   def create
-    @asset = Asset.new(params[:asset])
+    @asset =current_user.assets.new(params[:asset])
 
     respond_to do |format|
       if @asset.save

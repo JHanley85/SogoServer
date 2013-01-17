@@ -1,0 +1,6 @@
+-content_for(:sidebar) do
+  %li.ui-menu-item Listing assets
+  %li.ui-menu-item= link_to 'New Asset', new_asset_path
+
+= render :partial=>'gallery'
+

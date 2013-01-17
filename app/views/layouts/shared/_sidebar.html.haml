@@ -1,0 +1,11 @@
+%div.left
+  %ul
+    %li.ui-menu-item User:
+    %li.ui-menu-item=current_user.email
+    %li.ui-menu-item  Token:
+    -if current_user.authentication_token
+      %li.ui-menu-item=current_user.authentication_token
+      %li.ui-menu-item=link_to "Delete Token", token_authentications_path(current_user.id), 'data-confirm' => "Are you sure?", "data-method" => "delete", :rel => "nofollow"
+    -else
+      %li.ui-menu-item=link_to "Get Token",token_authentications_path(current_user.id), 'data-confirm' => "Are you sure?", "data-method" => "post", :rel => "nofollow"
+  =yield(:sidebar)

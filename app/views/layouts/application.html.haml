@@ -1,0 +1,38 @@
+!!! XML
+!!!
+%html
+  %head
+    %title SogoServer 2
+    = csrf_meta_tag
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    =render :partial=>"layouts/shared/head"
+
+  %body.bp.two-col
+    #page
+      #container
+        #header.span-24
+          =render :partial=>'layouts/shared/navigation'
+        #sidebar.ui-menu.ui-widget.ui-widget-content.ui-corner-all
+          =render :partial=>'layouts/shared/sidebar'
+        #content
+          -if flash[:notice]
+            %p.notice= flash[:notice]
+          -if flash[:alert]
+            %p.error= alert
+          -if flash[:notice]
+            %p.success = flash[:notice]
+
+          = yield
+
+      .push
+
+    .footer.ui-menu.ui-widget.ui-widget-content.ui-corner-all
+      This is the footer area.
+    :javascript
+              $(function() {
+                $( "input[type=submit], a, button" )
+                  .button()
+                  .click(function( event ) {
+                  });
+              });

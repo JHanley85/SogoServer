@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./normal/
+//= require_tree ./gallery/
+//= require jquery.galleriffic.js
+//= require jquery.opacityrollover.js
+// /
 
 

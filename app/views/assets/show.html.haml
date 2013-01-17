@@ -1,0 +1,9 @@
+%p#notice
+  =notice
+
+
+=#debug @asset
+%img{:src=>"/assets/users/#{@asset.user_id}/#{@asset.id}_original_#{@asset.data_file_name}"}
+
+= link_to 'Edit', edit_asset_path(@asset) |
+= link_to 'Back', assets_path

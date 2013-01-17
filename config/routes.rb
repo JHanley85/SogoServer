@@ -1,5 +1,5 @@
 SogoServer::Application.routes.draw do
-  devise_for :users,  :controllers => { :registrations => "devise/custom/registrations" }
+  devise_for :users
   resources :token_authentications, :only => [:create, :destroy]
 
   resources :assets

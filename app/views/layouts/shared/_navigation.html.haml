@@ -1,0 +1,14 @@
+#nav.span-24
+  %ul.span-24.center#menu
+    %li.span-6
+      =render 'devise/menu/registration_items'
+    %li.span-6
+      =link_to "Gallery", assets_path
+    %li.span-6
+      =link_to "API Access","#"
+    %li.span-6.last
+      = render 'devise/menu/login_items'
+
+.sitetitle
+  .main SoGo
+  .sub Alpha

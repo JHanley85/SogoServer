@@ -1,0 +1,25 @@
+<div id="gallery" class="content">
+  <div id="controls" class="controls"></div>
+  <div class="slideshow-container">
+    <div id="loading" class="loader"></div>
+    <div id="slideshow" class="slideshow"></div>
+  </div>
+  <div id="caption" class="caption-container"></div>
+</div>
+<div id="thumbs" class="navigation">
+  <ul class="thumbs noscript">
+    <% 20.times do %>
+        <% @assets.each do |asset| %>
+            <li>
+
+              <%= link_to((image_tag "users/#{asset.user_id}/#{asset.id}_thumb_#{asset.data_file_name}", :alt => asset.data_file_name, :width => '75px'), "/assets/users/#{asset.user_id}/#{asset.id}_original_#{asset.data_file_name}", :class => 'thumb', :name => "#{asset.id}_original_#{asset.data_file_name}", :title => asset.data_file_name) %>
+              <div class="caption">
+                <div class="image-title"><%= asset.data_file_name %></div>
+                <div class="image-desc"><%= asset.data_updated_at %></div>
+              </div>
+            </li>
+        <% end %>
+    <% end %>
+    <br>
+  </ul>
+</div>
